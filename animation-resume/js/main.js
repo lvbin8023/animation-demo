@@ -16,7 +16,8 @@ function writeCode(preFix, code, fn) {
 }
 
 function writeMarkdown(markdown, fn) {
-  var domPaper = document.querySelector('#paper>.conetent');
+  var domPaper = document.querySelector('#paper>.content');
+  console.log(paper);
   var n = 0;
   var timeId = setInterval(() => {
     n += 1;
