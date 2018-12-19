@@ -50,7 +50,7 @@
   */
 
   .preview {
-    height: 100% ;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@
   }
 
   .wrapper {
-    width: 100% ;
+    width: 100%;
     height: 180px;
     position: relative;
   }
@@ -80,7 +80,7 @@
     border-color: black transparent transparent;
     border-radius: 11px;
     position: absolute;
-    left: 50% ;
+    left: 50%;
     top: 28px;
     margin-left: -12px;
   }
@@ -141,7 +141,7 @@
     width: 68px;
     height: 68px;
     background-color: #fc0d1c;
-    border-radius: 50% ;
+    border-radius: 50%;
     position: absolute;
     top: 85px;
   }
@@ -151,7 +151,7 @@
   */
 
   .face.left {
-    right: 50% ;
+    right: 50%;
     margin-right: 116px;
   }
 
@@ -160,7 +160,7 @@
   */
   
   .face.right {
-    left: 50% ;
+    left: 50%;
     margin-left: 116px;
   }
 
@@ -182,7 +182,7 @@
   */
 
   .upperLip.left {
-    right: 50% ;
+    right: 50%;
     border-bottom-left-radius: 40px 25px;
     border-top: none;
     border-left: none;
@@ -195,7 +195,7 @@
   */
 
   .upperLip.right {
-    left: 50% ;
+    left: 50%;
     border-bottom-right-radius: 40px 25px;
     border-top: none;
     border-left: none;
@@ -210,7 +210,7 @@
   .lowerLip-wrapper {
     position: absolute;
     bottom: 0;
-    left: 50% ;
+    left: 50%;
     margin-left: -150px;
     width: 300px;
     height: 120px;
@@ -240,7 +240,7 @@
     background-color: #fc4a62;
     border-radius: 50px;
     position: absolute;
-    left: 50% ;
+    left: 50%;
     margin-left: -50px;
   }
 
