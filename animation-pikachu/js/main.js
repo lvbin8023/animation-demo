@@ -1,10 +1,10 @@
 ! function () {
   var duration = 50;
+  var timeId;
 
   $('.actions').on('click', 'button', function (event) {
     var $button = $(event.currentTarget);
     var $speed = $button.attr('data-speed');
-    console.log($speed);
     $button.addClass('active').siblings('.active').removeClass('active');
     switch ($speed) {
       case 'slow':
@@ -16,6 +16,12 @@
       case 'fast':
         duration = 10;
         break;
+        case 'start':
+        writeCode(realCode,realCode);
+        break;
+      case 'stop':
+        clearTimeout(timeId);
+        break;
       default:
         break;
     }
@@ -25,13 +31,13 @@
     var container = document.querySelector('#code');
     var styleTag = document.querySelector('#styleTag');
     var n = 0;
-    setTimeout(function run() {
+    timeId = setTimeout(function run() {
       n += 1;
       container.innerHTML = preFix + code.slice(0, n);
       styleTag.innerHTML = preFix + code.slice(0, n);
       container.scrollTop = container.scrollHeight;
       if (n < code.length) {
-        setTimeout(run, duration);
+        timeId = setTimeout(run, duration);
       } else {
         fn.call();
       }
