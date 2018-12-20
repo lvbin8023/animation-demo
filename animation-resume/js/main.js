@@ -86,11 +86,10 @@ html {
   right: 0;
   width: 50% ;
   height: 100% ;
-  background-color: black;
+  border: 1px solid green;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
 }
 
 #paper > .content {
@@ -101,16 +100,21 @@ html {
 `;
 
 var result2 = `
+#
   `;
 
 var md = `
-# 标题1
+# 自我介绍
+
+我叫吕彬
+
+是一名前端程序员
 `;
 
 function creatPaper(fn) {
   var paper = document.createElement('div');
   paper.id = 'paper';
-  var content = document.createElement('div');
+  var content = document.createElement('pre');
   content.className = 'content';
   paper.appendChild(content);
   document.body.appendChild(paper);
