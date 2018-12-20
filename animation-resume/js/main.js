@@ -33,8 +33,8 @@ function compile(text) {
   //进行转换
   var html = converter.makeHtml(text);
   //展示到对应的地方
-  var a = document.querySelector("pre.content").innerHTML = html;
-  return a;
+  var pageText = document.querySelector("pre.content").innerHTML = html;
+  return pageText;
 }
 
 function writeMarkdown(markDown, fn) {
