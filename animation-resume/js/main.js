@@ -3,7 +3,7 @@ var styleTag = document.querySelector('#styleTag');
 function writeCode(preFix, code, fn) {
   var domeCode = document.querySelector('#code');
   var n = 0;
-  var timeId = setInterval(() => {
+  var timeId = setInterval(function () {
     n += 1;
     domeCode.innerHTML = Prism.highlight(preFix + code.slice(0, n), Prism.languages.css, 'css');
     styleTag.innerHTML = preFix + code.slice(0, n);
@@ -40,7 +40,7 @@ function compile(text) {
 function writeMarkdown(markDown, fn) {
   var domPaper = document.querySelector('#paper>.content');
   var n = 0;
-  var timeId = setInterval(() => {
+  var timeId = setInterval(function () {
     n += 1;
     domPaper.innerHTML = markDown.slice(0, n);
     domPaper.scrollTop = domPaper.scrollHeight;
@@ -146,9 +146,9 @@ var md = `
 **深度整合**：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。
 `;
 
-writeCode('', result, () => {
-  creatPaper(() => {
-    writeCode(result, result2, () => {
+writeCode('', result, function () {
+  creatPaper(function () {
+    writeCode(result, result2, function () {
       writeMarkdown(compile(md));
     });
   });
