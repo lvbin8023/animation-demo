@@ -144,6 +144,19 @@ var md = `
 支持移动端 Web；
 
 **深度整合**：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。
+
+**写个代码看看**：
+\`\`\`
+<html>
+  <body>
+    <ul>
+      <li><p>foo</p></li>
+      <li><p>bar</p></li>
+      <li><p>baz</p></li>
+    </ul>
+  </body>
+</html>
+\`\`\`
 `;
 
 writeCode('', result, function () {
