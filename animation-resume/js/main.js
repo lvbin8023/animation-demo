@@ -26,15 +26,15 @@ function creatPaper(fn) {
 }
 
 function compile(text) {
-
   //获取要转换的文字
   // var text = document.querySelector(".content").value;
   //创建实例
   var converter = new showdown.Converter();
   //进行转换
   var html = converter.makeHtml(text);
-  //展示到对应的地方  result便是id名称
-  document.querySelector("pre.content").innerHTML = html;
+  //展示到对应的地方
+  var a = document.querySelector("pre.content").innerHTML = html;
+  return a;
 }
 
 function writeMarkdown(markDown, fn) {
@@ -162,7 +162,7 @@ var md = `
 writeCode('', result, function () {
   creatPaper(function () {
     writeCode(result, result2, function () {
-      writeMarkdown(compile(md));
+      writeMarkdown(compile(md),function () {});
     });
   });
 });
