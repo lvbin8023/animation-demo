@@ -15,15 +15,36 @@ function writeCode(preFix, code, fn) {
   }, 0);
 }
 
-function writeMarkdown(markdown, fn) {
+function creatPaper(fn) {
+  var paper = document.createElement('div');
+  paper.id = 'paper';
+  var content = document.createElement('pre');
+  content.className = 'content';
+  paper.appendChild(content);
+  document.body.appendChild(paper);
+  fn.call();
+}
+
+function compile(text) {
+
+  //获取要转换的文字
+  // var text = document.querySelector(".content").value;
+  //创建实例
+  var converter = new showdown.Converter();
+  //进行转换
+  var html = converter.makeHtml(text);
+  //展示到对应的地方  result便是id名称
+  document.querySelector("pre.content").innerHTML = html;
+}
+
+function writeMarkdown(markDown, fn) {
   var domPaper = document.querySelector('#paper>.content');
-  console.log(paper);
   var n = 0;
   var timeId = setInterval(() => {
     n += 1;
-    domPaper.innerHTML = markdown.slice(0, n);
+    domPaper.innerHTML = markDown.slice(0, n);
     domPaper.scrollTop = domPaper.scrollHeight;
-    if (n >= markdown.length) {
+    if (n >= markDown.length) {
       window.clearInterval(timeId);
       fn.call();
     }
@@ -100,31 +121,35 @@ html {
 `;
 
 var result2 = `
-#
+pre.content {
+  font-size: 18px;
+}
   `;
 
 var md = `
-# 自我介绍
+#欢迎使用马克飞象
 
-我叫吕彬
+@(示例笔记本)[马克飞象 | 帮助 | Markdown]
 
-是一名前端程序员
+**马克飞象**是一款专为印象笔记（ Evernote）打造的Markdown编辑器，
+通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，
+带来前所未有的书写体验。
+
+特点概述：
+
+**功能丰富**：支持高亮代码块、* LaTeX * 公式、流程图，本地图片以及附件上传，
+甚至截图粘贴，工作学习好帮手；
+
+**得心应手**：简洁高效的编辑器，提供[桌面客户端][1]以及[离线Chrome App][2]，
+支持移动端 Web；
+
+**深度整合**：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。
 `;
-
-function creatPaper(fn) {
-  var paper = document.createElement('div');
-  paper.id = 'paper';
-  var content = document.createElement('pre');
-  content.className = 'content';
-  paper.appendChild(content);
-  document.body.appendChild(paper);
-  fn.call();
-}
 
 writeCode('', result, () => {
   creatPaper(() => {
     writeCode(result, result2, () => {
-      writeMarkdown(md);
+      writeMarkdown(compile(md));
     });
   });
 });
