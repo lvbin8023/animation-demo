@@ -16,9 +16,6 @@
       case 'fast':
         duration = 10;
         break;
-        case 'start':
-        writeCode(realCode,realCode);
-        break;
       case 'stop':
         clearTimeout(timeId);
         break;
@@ -50,7 +47,7 @@
   */
 
   .preview {
-    height: 100% ;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +55,7 @@
   }
 
   .wrapper {
-    width: 100% ;
+    width: 100%;
     height: 180px;
     position: relative;
   }
@@ -72,15 +69,15 @@
   */
 
   .nose {
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border: 11px solid;
     border-style: solid;
     border-width: 12px;
     border-color: black transparent transparent;
     border-radius: 11px;
     position: absolute;
-    left: 50% ;
+    left: 50%;
     top: 28px;
     margin-left: -12px;
   }
@@ -109,9 +106,9 @@
     height: 24px;
     background-color: white;
     position: absolute;
-    border-radius: 50% ;
+    border-radius: 50%;
     left: 6px;
-    top: 0px;
+    top: 0;
     border: 2px solid #000;
   }
 
@@ -141,7 +138,7 @@
     width: 68px;
     height: 68px;
     background-color: #fc0d1c;
-    border-radius: 50% ;
+    border-radius: 50%;
     position: absolute;
     top: 85px;
   }
@@ -151,7 +148,7 @@
   */
 
   .face.left {
-    right: 50% ;
+    right: 50%;
     margin-right: 116px;
   }
 
@@ -160,7 +157,7 @@
   */
   
   .face.right {
-    left: 50% ;
+    left: 50%;
     margin-left: 116px;
   }
 
@@ -182,7 +179,7 @@
   */
 
   .upperLip.left {
-    right: 50% ;
+    right: 50%;
     border-bottom-left-radius: 40px 25px;
     border-top: none;
     border-left: none;
@@ -195,7 +192,7 @@
   */
 
   .upperLip.right {
-    left: 50% ;
+    left: 50%;
     border-bottom-right-radius: 40px 25px;
     border-top: none;
     border-left: none;
@@ -210,7 +207,7 @@
   .lowerLip-wrapper {
     position: absolute;
     bottom: 0;
-    left: 50% ;
+    left: 50%;
     margin-left: -150px;
     width: 300px;
     height: 120px;
@@ -240,11 +237,11 @@
     background-color: #fc4a62;
     border-radius: 50px;
     position: absolute;
-    left: 50% ;
+    left: 50%;
     margin-left: -50px;
   }
 
   好啦！可爱的皮卡丘我们终于画好啦！
-  送给同样可爱的你们！n( * ≧▽≦ * ) n `;
+  送给同样可爱的你们！n(* ≧▽≦ *)n`;
   writeCode('', realCode);
 }.call();
